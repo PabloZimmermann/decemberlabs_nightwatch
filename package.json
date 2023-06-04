@@ -1,0 +1,15 @@
+{
+    "name": "decemberlabs_nightwatch",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "nightwatch"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "chromedriver": "^114.0.1",
+        "nightwatch": "^2.6.21"
+    }
+}
