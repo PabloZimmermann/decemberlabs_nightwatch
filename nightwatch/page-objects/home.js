@@ -21,9 +21,7 @@ module.exports = {
             },
 
             setName(name) {
-                return this.setValue("@nameInput", name).execute(function () {
-                    document.querySelector("#wpforms-872-field_0").blur()
-                })
+                return this.setValue("@nameInput", name).sendKeys("@emailInput", this.api.Keys.TAB)
             },
 
             setEmail(email) {
