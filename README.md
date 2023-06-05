@@ -41,3 +41,4 @@ For a more realistic working scenario, there are several improvements that could
 3. Incorporate try-catch blocks to provide more meaningful error logs.
 4. Include different scripts for various browser options or worker counts, thereby improving the test suite's flexibility.
 5. Implement a .env file for setting the URL. This could facilitate testing across different environments such as localhost, development, or staging.
+6. I will also add more statics selectors ids in the HTML.
