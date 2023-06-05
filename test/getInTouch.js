@@ -7,7 +7,7 @@ describe("Test Get In Touch Form", function () {
     })
 
     it("should open the modal when Get In Touch link is clicked", async function () {
-        await inHousePage.navigate().resizeWindow(1440, 900).click("@getInTouchLink")
+        await inHousePage.prepareTest()
         await inHousePage.expect.element("@modal").to.be.visible
         await inHousePage.expect.element("@modalTitle").text.to.equal("Get In Touch")
     })
@@ -33,7 +33,7 @@ describe("Test Get In Touch Form", function () {
     })
 
     it("should successfully fill the form and send it", async function () {
-        await inHousePage.navigate().resizeWindow(1440, 900).click("@getInTouchLink")
+        await inHousePage.prepareTest()
         await inHousePage.setName("John Doe")
         await inHousePage.verifyName()
         await inHousePage.setEmail("john.doe@example.com")

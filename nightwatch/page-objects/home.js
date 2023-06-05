@@ -1,7 +1,7 @@
 module.exports = {
     url: "https://inhouse.decemberlabs.com/",
     elements: {
-        getInTouchLink: 'a[href="#"]',
+        getInTouchLink: 'a[href="#"]', // you can also use xpath here "//a[text()='Get in touch']"
         modal: ".dl-modal.dl-getintouch-modal.big.open",
         modalTitle: ".contact-form-heading.center",
         sendButton: 'button[name="wpforms[submit]"]',
@@ -16,6 +16,10 @@ module.exports = {
     },
     commands: [
         {
+            prepareTest() {
+                return this.navigate().resizeWindow(1440, 900).click("@getInTouchLink")
+            },
+
             setName(name) {
                 return this.setValue("@nameInput", name).execute(function () {
                     document.querySelector("#wpforms-872-field_0").blur()
