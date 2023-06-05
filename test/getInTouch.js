@@ -31,7 +31,9 @@ describe("Test Get In Touch Form", function () {
         await home.setEmail(testData.validEmail).verifyValidEmail()
         await home.setCompany(testData.validCompany).verifyValidCompany()
         await home.setMessage(testData.validMessage).verifyValidMessage()
-        await home.clickSendButton()
+        //Task requires not to click the send button
+        //await home.clickSendButton()
+        //here i would have verify the successful notification message
     })
 
     after(function (browser, done) {
