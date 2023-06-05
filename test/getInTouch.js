@@ -6,34 +6,34 @@ describe("Test Get In Touch Form", function () {
         done()
     })
 
-    it.only("should open the modal when Get In Touch link is clicked", function (browser) {
-        inHousePage.navigate().resizeWindow(1440, 900).click("@getInTouchLink")
-        inHousePage.expect.element("@modal").to.be.visible
-        inHousePage.expect.element("@modalTitle").text.to.equal("Get In Touch")
+    it("should open the modal when Get In Touch link is clicked", async function () {
+        await inHousePage.navigate().resizeWindow(1440, 900).click("@getInTouchLink")
+        await inHousePage.expect.element("@modal").to.be.visible
+        await inHousePage.expect.element("@modalTitle").text.to.equal("Get In Touch")
     })
 
-    it("should show error when send button is clicked without filling the form", function (browser) {
-        inHousePage.click("@sendButton")
-        inHousePage.expect
+    it("should show error when send button is clicked without filling the form", async function () {
+        await inHousePage.click("@sendButton")
+        await inHousePage.expect
             .element("@nameInput")
             .to.have.attribute("class")
             .which.contains("wpforms-error")
-        inHousePage.expect
+        await inHousePage.expect
             .element("@emailInput")
             .to.have.attribute("class")
             .which.contains("wpforms-error")
-        inHousePage.expect
+        await inHousePage.expect
             .element("@companyNameInput")
             .to.have.attribute("class")
             .which.contains("wpforms-error")
-        inHousePage.expect
+        await inHousePage.expect
             .element("@messageInput")
             .to.have.attribute("class")
             .which.contains("wpforms-error")
     })
 
-    it("should successfully fill the form and send it", async function (browser) {
-        await inHousePage.navigate().click("@getInTouchLink")
+    it("should successfully fill the form and send it", async function () {
+        await inHousePage.navigate().resizeWindow(1440, 900).click("@getInTouchLink")
         await inHousePage.setName("John Doe")
         await inHousePage.verifyName()
         await inHousePage.setEmail("john.doe@example.com")
