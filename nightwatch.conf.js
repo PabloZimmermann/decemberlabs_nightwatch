@@ -45,18 +45,6 @@ module.exports = {
             webdriver: {
                 start_process: true,
                 server_path: ""
-            },
-
-            test_runner: {
-                // set mocha as the runner
-                // For more info on using Mocha with Nightwatch, visit:
-                // https://nightwatchjs.org/guide/writing-tests/using-mocha.html
-                type: "mocha",
-                // define mocha specific options
-                options: {
-                    ui: "bdd",
-                    reporter: "list"
-                }
             }
         },
 
