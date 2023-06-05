@@ -20,6 +20,31 @@ module.exports = {
                 return this.navigate().resizeWindow(1440, 900).click("@getInTouchLink")
             },
 
+            verifyModalIsOpen() {
+                return this.expect
+                    .element("@modal")
+                    .to.be.visible.expect.element("@modalTitle")
+                    .text.to.equal("Get In Touch")
+            },
+
+            clickSendButton() {
+                return this.click("@sendButton")
+            },
+
+            verifyInputsErrorsAreDisplayed() {
+                return this.inputCSSError("@nameInput")
+                    .inputCSSError("@emailInput")
+                    .inputCSSError("@companyNameInput")
+                    .inputCSSError("@messageInput")
+            },
+
+            inputCSSError(selector) {
+                return this.expect
+                    .element(selector)
+                    .to.have.attribute("class")
+                    .which.contains("wpforms-error")
+            },
+
             setName(name) {
                 return this.setValue("@nameInput", name).sendKeys("@emailInput", this.api.Keys.TAB)
             },
@@ -45,19 +70,19 @@ module.exports = {
                 )
             },
 
-            verifyName() {
+            verifyValidName() {
                 return this.waitForElementVisible("@nameValid", 5000)
             },
 
-            verifyEmail() {
+            verifyValidEmail() {
                 return this.waitForElementVisible("@emailValid", 5000)
             },
 
-            verifyCompany() {
+            verifyValidCompany() {
                 return this.waitForElementVisible("@companyNameValid", 5000)
             },
 
-            verifyMessage() {
+            verifyValidMessage() {
                 return this.waitForElementVisible("@messageValid", 5000)
             }
         }
