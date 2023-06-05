@@ -23,15 +23,24 @@ module.exports = {
             },
 
             setEmail(email) {
-                return this.setValue("@emailInput", email)
+                return this.setValue("@emailInput", email).sendKeys(
+                    "@emailInput",
+                    this.api.Keys.TAB
+                )
             },
 
             setCompany(company) {
-                return this.setValue("@companyNameInput", company).keys(this.api.Keys.TAB)
+                return this.setValue("@companyNameInput", company).sendKeys(
+                    "@companyNameInput",
+                    this.api.Keys.TAB
+                )
             },
 
             setMessage(message) {
-                return this.setValue("@messageInput", message).keys(this.api.Keys.TAB)
+                return this.setValue("@messageInput", message).sendKeys(
+                    "@messageInput",
+                    this.api.Keys.TAB
+                )
             },
 
             verifyName() {
