@@ -36,7 +36,10 @@ module.exports = {
             },
 
             desiredCapabilities: {
-                browserName: "chrome"
+                browserName: "chrome",
+                chromeOptions: {
+                    args: ["start-maximized"]
+                }
             },
 
             webdriver: {
@@ -49,7 +52,6 @@ module.exports = {
                 // For more info on using Mocha with Nightwatch, visit:
                 // https://nightwatchjs.org/guide/writing-tests/using-mocha.html
                 type: "mocha",
-
                 // define mocha specific options
                 options: {
                     ui: "bdd",
